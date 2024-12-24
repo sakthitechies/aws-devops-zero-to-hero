@@ -1,10 +1,10 @@
 version: 0.2
 
-env:
-  parameter-store:
-    DOCKER_REGISTRY_USERNAME: /my-python/docker-username
-    DOCKER_REGISTRY_PASSWORD: /my-python/docker-password
-    DOCKER_REGISTRY_URL: /my-python/docker-url
+# env:
+#   parameter-store:
+#     DOCKER_REGISTRY_USERNAME: /my-python/docker-username
+#     DOCKER_REGISTRY_PASSWORD: /my-python/docker-password
+#     DOCKER_REGISTRY_URL: /my-python/docker-url
     
 phases:
   install:
@@ -19,9 +19,9 @@ phases:
       - echo "Running tests..."
       - cd day-14/simple-python-app/
       - echo "Building Docker image..."
-      - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
-      - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/code-build-repo/simple-python-flask-app:latest" .
-      - docker push "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/code-build-repo/simple-python-flask-app:latest"
+      - echo "Tiamat@0927" | docker login -u "sakthi0927" --password-stdin "docker.io"
+      - docker build -t "docker.io/sakthi0927/code-build-repo/simple-python-flask-app:latest" .
+      - docker push "docker.io/sakthi0927/code-build-repo/simple-python-flask-app:latest"
   post_build:
     commands:
       - echo "Build completed successfully!"
