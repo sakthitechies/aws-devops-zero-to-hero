@@ -20,8 +20,8 @@ phases:
       - cd day-14/simple-python-app/
       - echo "Building Docker image..."
       - docker login -u "sakthi0927" -p "Tiamat@0927" "docker.io"
-      - docker build -t "docker.io/sakthi0927/code-build-repo/simple-python-flask-app:latest" .
-      - docker push "docker.io/sakthi0927/code-build-repo/simple-python-flask-app:latest"
+      - docker build -t "docker.io/sakthi0927/code-build-repo:latest" .
+      - docker push "docker.io/sakthi0927/code-build-repo:latest"
   post_build:
     commands:
       - echo "Build completed successfully!"
