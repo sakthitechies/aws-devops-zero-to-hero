@@ -15,5 +15,6 @@ set -e
 containerid='sudo docker ps | awk -F " " '{print $1}''
 
 #docker stop $containerid
+#
 
 sudo docker rm -f "$containerid"
